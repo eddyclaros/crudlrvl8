@@ -14,7 +14,7 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        //
+        return Articulo::get();
     }
 
     /**
@@ -25,7 +25,8 @@ class ArticuloController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $articulo=new Articulo;
+        $articulo->create($request->all());
     }
 
     /**
@@ -36,7 +37,7 @@ class ArticuloController extends Controller
      */
     public function show(Articulo $articulo)
     {
-        //
+        return $articulo;
     }
 
     /**
@@ -49,6 +50,7 @@ class ArticuloController extends Controller
     public function update(Request $request, Articulo $articulo)
     {
         //
+        $articulo->update($request->all());
     }
 
     /**
@@ -59,6 +61,6 @@ class ArticuloController extends Controller
      */
     public function destroy(Articulo $articulo)
     {
-        //
+        $articulo->delete();
     }
 }
